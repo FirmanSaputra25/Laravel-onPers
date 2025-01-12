@@ -17,14 +17,15 @@
     <!-- CSS Libraries -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css">
 
 
     <link rel="stylesheet" href="{{ asset('customs/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('customs/lib/slick/slick-theme.css') }}">
     <link rel="stylesheet" href="{{ asset('customs/lib/slick/slick.css') }}">
     <style>
-       .story-container {
+        .story-container {
             position: relative;
             width: 100%;
             max-width: 1000px;
@@ -34,11 +35,13 @@
             border-radius: 10px;
             background-color: black;
         }
+
         .story-video {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
+
         .progress-bar-container {
             position: absolute;
             top: 10px;
@@ -48,6 +51,7 @@
             gap: 5px;
             z-index: 10;
         }
+
         .progress-bar {
             flex: 1;
             height: 4px;
@@ -55,12 +59,14 @@
             border-radius: 2px;
             overflow: hidden;
         }
+
         .progress-bar-inner {
             height: 100%;
             background-color: white;
             width: 0;
             transition: width linear;
         }
+
         /* Styling panah back dan next */
         .arrow-btn {
             position: absolute;
@@ -72,9 +78,11 @@
             z-index: 10;
             user-select: none;
         }
+
         .arrow-left {
             left: 10px;
         }
+
         .arrow-right {
             right: 10px;
         }
@@ -358,8 +366,8 @@
                                             style="cursor: pointer;">
                                             <div class="card-body text-center p-4 p-xxl-5">
                                                 <svg fill="#ff6f61" width="48" height="48"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                        class="bi bi-eraser-fill text-primary mb-4" viewBox="0 0 448 512">
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    class="bi bi-eraser-fill text-primary mb-4" viewBox="0 0 448 512">
                                                     <path
                                                         d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z" />
                                                 </svg>
@@ -492,26 +500,10 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <h2>Advertorial</h2>
-                    <div class="row cn-slider">
-                        <!-- Mengelompokkan setiap 3 berita -->
-                        @foreach ($Advertorial as $adv)
-                        <div class="col-md-6">
-                            <div class="cn-img">
-                                <img src="{{ $adv->image_url }}" alt="{{ $adv->title }}">
-                                <div class="cn-title">
-                                    <a href="{{ route('news-details', $adv->slug) }}">
-                                        {{ $adv->title }}
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        @endforeach
-                    </div>
-                </div>
-            </div>
+
+
+
+
             <div class="row">
                 <div class="col-md-12">
                     <h2>Headline</h2>
@@ -575,6 +567,30 @@
                                 <div class="cn-title">
                                     <a href="{{ route('news-details', $acaras->slug) }}">
                                         {{ $acaras->title }}
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="advertorial">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Advertorial</h2>
+                    <div class="row cn-slider">
+                        <!-- Mengelompokkan setiap 3 berita -->
+                        @foreach ($Advertorial as $adv)
+                        <div class="col-md-6">
+                            <div class="cn-img">
+                                <img src="{{ $adv->image_url }}" alt="{{ $adv->title }}">
+                                <div class="cn-title">
+                                    <a href="{{ route('news-details', $adv->slug) }}">
+                                        {{ $adv->title }}
                                     </a>
                                 </div>
                             </div>
